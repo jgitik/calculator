@@ -3,16 +3,30 @@ package main;
 
 import java.util.Scanner;
 
-public final class  ReadData {
-    public static String one;
-    public static String two;
-    public static int number1;
-    public static int number2;
-    public static String action;
-    public static  String[] numbers=new String[0];
+public class  ReadData {
+     private static String one;
+    private static String two;
 
 
-       public static String Read(){
+    public static String getOne() {
+        return one;
+    }
+
+    public static String getTwo() {
+        return two;
+    }
+
+
+    private static String action;
+
+    public static String getAction() {
+        return action;
+    }
+
+    private static  String[] numbers=new String[0];
+
+
+       public static String read(){
 
 
         System.out.println("Введите строку");
@@ -22,8 +36,7 @@ public final class  ReadData {
        return data;
        }
 
-       public static void Data (String data)
-           {
+       public static void data (String data) throws ThreeNumberException {
 
 
                    if (data.contains("+")) {
@@ -43,7 +56,7 @@ public final class  ReadData {
                        numbers = data.split("\\*");
                    }
                    if (!(numbers.length == 2)) {
-                       throw new RuntimeException("Калькулятор умеет работать только с двумя числами");
+                       throw new ThreeNumberException("Калькулятор умеет работать только с двумя числами");
 
                    }
 

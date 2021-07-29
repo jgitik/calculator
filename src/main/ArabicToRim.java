@@ -19,13 +19,14 @@ public class ArabicToRim {
         map.put(1, "I");
 
     }
-    public final static String toRoman(double number1) {
-        int number= (int)number1;
 
-        int l =  map.floorKey(number);
-        if ( number == l ) {
+    public final static String toRoman(double number1) {
+        int number = (int) number1;
+
+        int l = map.floorKey(number);
+        if (number == l) {
             return map.get(number);
         }
-        return map.get(l) + toRoman(number-l);
+        return map.get(l) + toRoman(number - l);
     }
 }
